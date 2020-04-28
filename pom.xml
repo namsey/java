@@ -13,6 +13,7 @@
 </properties>
 
 <build>
+	<plugins>
 	<plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -35,6 +36,7 @@
                     </execution>
                 </executions>
             </plugin>
+	</plugins>
     <finalName>Calculator</finalName>
 </build>
 
