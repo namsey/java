@@ -7,7 +7,13 @@
         <version>0.0.1-SNAPSHOT</version>
         <name>Calculator Maven Webapp</name>
         <url>http://maven.apache.org</url>
-<plugin>
+
+<properties>
+    <failOnMissingWebXml>false</failOnMissingWebXml>  
+</properties>
+
+<build>
+	<plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.2</version>
@@ -29,11 +35,6 @@
                     </execution>
                 </executions>
             </plugin>
-<properties>
-    <failOnMissingWebXml>false</failOnMissingWebXml>  
-</properties>
-
-<build>
     <finalName>Calculator</finalName>
 </build>
 
