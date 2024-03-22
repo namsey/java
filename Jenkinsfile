@@ -8,8 +8,13 @@ pipeline{
         }
         stage('Code Test') {
             steps {
-                echo 'code test success...'
+                echo 'mvn --batch-mode -Dmaven.test.failure.ignore=true test'
             }
         }
     }
+    post {
+    always {
+      junit(testResults: 'target/surefire-reports/*.xml', allowEmptyResults : true)
+    }
+  }
 }
