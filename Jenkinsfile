@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Code Build') {
             steps{
-            echo 'code build success...'
+            sh 'mvn clean install'
             } 
         }
         stage('Code Test') {
