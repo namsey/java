@@ -8,7 +8,7 @@ pipeline{
         }
         stage('Code Test') {
             steps {
-                echo 'mvn --batch-mode -Dmaven.test.failure.ignore=true test'
+                echo 'mvn test'
             }
         }
         stage('SonarQube Analysis') {
