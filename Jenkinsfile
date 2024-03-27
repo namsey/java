@@ -11,10 +11,13 @@ pipeline{
                 echo 'mvn --batch-mode -Dmaven.test.failure.ignore=true test'
             }
         }
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('sonarqube'){
+                    sh 'mvn clean package sonar:sonar'
+                }
+            }
+        }
     }
-    post {
-    always {
-      junit(testResults: 'target/surefire-reports/*.xml', allowEmptyResults : true)
-    }
-  }
+    
 }
