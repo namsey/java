@@ -1,8 +1,4 @@
 pipeline{
-    branches {
-        branch 'feature-*'
-        branch 'develop'
-    }
     agent any
     stages{
         stage('Code Build') {
