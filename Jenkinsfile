@@ -1,26 +1,17 @@
+@Library("shared-library") _
 pipeline{
     agent any
     stages{
         stage('Code Build') {
             steps{
-            sh 'mvn clean install'
+            javaBuild()
             } 
         }
         stage('Code Test') {
             steps {
-                echo 'mvn test'
+                javaTest()
             }
         }
-        stage('SonarQube Analysis') {
-            steps {
-                script {
-                    scannerHome = tool 'sonar-scanner'
-                }
-                withSonarQubeEnv('Sonarqube Server'){
-                    sh "${scannerHome}/bin/sonar-scanner"
-                }
-            }
-        }
-    }
-    
+        
+    } 
 }
