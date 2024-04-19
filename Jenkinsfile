@@ -1,9 +1,9 @@
 @Library("shared-library") _
-pipeline{
+pipeline {
     agent any
-    stages{
+    stages {
         stage('Code Build') {
-            steps{
+            steps {
             javaBuild()
             } 
         }
@@ -11,7 +11,10 @@ pipeline{
             steps {
                 javaTest()
             }
-        }
-        
-    } 
+        } 
+        stage('SonarQube Coverage') {
+            steps {
+                sonar()
+            }
+        } 
 }
