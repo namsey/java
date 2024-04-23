@@ -14,6 +14,7 @@ pipeline {
         } 
         stage('SonarQube Coverage') {
             steps {
+		failProjectAnalysis = true
                 sonar()
             }
         } 
