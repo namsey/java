@@ -12,11 +12,13 @@ pipeline {
                 javaTest()
             }
         } 
-        stage('SonarQube Coverage') {
-            steps {
-		failProjectAnalysis = true
-                sonar()
-            }
-        } 
+        stage('SonarQube Analysis') {	
+		sonarqubeUtils.call(
+		httpUrl: "
+		http://192.158.1.4:9000/api/qualitygates/project_status?projectKey=${Calculator}",
+		username: 'sonar',
+		password: 'sonar'
+		)
+	}
     }
 }
