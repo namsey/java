@@ -17,5 +17,13 @@ pipeline {
 		sonar()
 	    }	
 	}
+	stage('QualityGate Analysis') {
+	   steps {
+		script {
+		// Call the shared library step
+		call('Coverage')
+		}
+	    }
+	}
     }
 }
