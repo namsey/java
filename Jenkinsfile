@@ -14,11 +14,8 @@ pipeline {
         } 
 	stage('SonarQube Analysis') {
 	    steps {
-		script {
-		// Call the shared library step
-			call('Coverage')
-		}
-	}	
-}
+		sonar()
+	    }	
+	}
     }
 }
