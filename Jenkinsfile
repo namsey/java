@@ -21,7 +21,7 @@ pipeline {
 	   steps {
 		script {
 		// Call the shared library step
-		call('Coverage')
+		call('testQualityGate')
 		}
 	    }
 	}
