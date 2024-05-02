@@ -13,9 +13,9 @@ pipeline {
             }
         } 
         stage('SonarQube Analysis') {	
-		sonarqubeUtils.call(
+		sonarUTL.call(
 		httpUrl: "
-		http://192.158.1.4:9000/api/qualitygates/project_status?projectKey=${Calculator}",
+		http://192.168.1.8:9000/api/qualitygates/project_status?projectKey=${Calculator}",
 		username: 'admin',
 		password: 'sonar'
 		)
