@@ -16,7 +16,7 @@ pipeline {
 		sonarqubeUtils.call(
 		httpUrl: "
 		http://192.158.1.4:9000/api/qualitygates/project_status?projectKey=${Calculator}",
-		username: 'sonar',
+		username: 'admin',
 		password: 'sonar'
 		)
 	}
