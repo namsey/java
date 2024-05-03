@@ -19,11 +19,8 @@ pipeline {
 	}
 	stage('QualityGate Analysis') {
 	   steps {
-		script {
-		// Call the shared library step
-		call('testQualityGate')
+		sonarUTL()
 		}
 	    }
 	}
     }
-}
