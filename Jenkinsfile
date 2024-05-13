@@ -19,8 +19,10 @@ pipeline {
 	}
 	stage('QualityGate Analysis') {
 	   steps {
-		sonarUTL()
-		}
+              timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true
 	    }
 	}
     }
+    }
+}	
